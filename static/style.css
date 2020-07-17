@@ -1,18 +1,10 @@
-/*
- * Paper
- * A simple, clean, flexible Hugo theme
- * https://github.com/nanxiaobei/hugo-paper
- * Designed by MR.LEE (https://mrlee.me/)
- * Updated in 2020.6.12
- */
-
 /* Theme
 -------------------------------------------------- */
 :root {
   --gap: 24px;
   --content-gap: 40px;
   --nav-width: 1024px;
-  --main-width: 640px;
+  --main-width: 1024px;
   --header-height: 60px;
   --footer-height: 60px;
   --radius: 8px;
