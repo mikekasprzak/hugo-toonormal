@@ -6,7 +6,9 @@
     <div class="post-meta">
       {{- if or .Params.author .Site.Params.author }}
       {{- .Params.author | default .Site.Params.author }} · {{ end }}
+      {{- if .Date }}
       {{- .Date.Format "January 2, 2006" -}}
+      {{- end }}
     </div>
   </header>
   <div class="post-content">{{ .Content }}</div>
@@ -41,5 +43,18 @@
   {{- end }}
   {{- end }}
 </article>
+
+{{- if (or .Prev .Next) }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if .Prev }}
+    <a class="prev" href="{{ .Prev.URL }}">← {{ i18n "prev_page" }} | {{ .Prev.Title }}</a>
+    {{- end }}
+    {{- if .Next }}
+    <a class="next" href="{{ .Next.URL }}">{{ .Next.Title }} | {{ i18n "next_page" }} →</a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
 
 {{- partial "footer.html" . }}
