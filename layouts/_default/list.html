@@ -52,7 +52,9 @@
     <p>{{ .Summary | plainify | htmlUnescape }}...</p>
   </section>
   <footer class="entry-footer">
+    {{- if .Date }}
     <time>{{ .Date.Format "January 2, 2006" }}</time>
+    {{- end }}
   </footer>
   <a class="entry-link" href="{{ .Permalink }}"></a>
 </article>
