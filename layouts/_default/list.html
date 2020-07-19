@@ -48,13 +48,15 @@
   <header class="entry-header">
     <h2>{{ .Title }}</h2>
   </header>
+  <div class="entry-meta">
+    {{- if .Date }}
+    <time>{{ .Date.Format "January 2, 2006" }}</time>
+    {{- end }}
+  </div>
   <section class="entry-content">
     <p>{{ .Summary | plainify | htmlUnescape }}...</p>
   </section>
   <footer class="entry-footer">
-    {{- if .Date }}
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
-    {{- end }}
   </footer>
   <a class="entry-link" href="{{ .Permalink }}"></a>
 </article>
